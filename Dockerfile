@@ -26,4 +26,4 @@ RUN make install
 
 WORKDIR /
 
-CMD ["ttserver"]
+CMD ["ttserver" "-port 1978" "/var/ttserver/casket.tch#bnum=50000000"]
