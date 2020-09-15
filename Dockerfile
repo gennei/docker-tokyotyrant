@@ -1,9 +1,9 @@
-FROM alpine:3.12.0
+FROM centos:7
 
 EXPOSE 1978
 
-RUN apk update && \
-    apk --no-cache add curl gcc g++ make zlib-dev bzip2-dev 
+RUN yum update && \
+    yum install -y curl gcc g++ make zlib zlib-devel bzip2 bzip2-devel
 
 WORKDIR /tmp
 
