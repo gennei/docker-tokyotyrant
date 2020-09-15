@@ -24,4 +24,6 @@ RUN ./configure && make && make install
 
 WORKDIR /
 
-CMD ["ttserver", "-port", "1978", "/var/ttserver/casket.tch#bnum=50000000"]
+RUN mkdir -p /var/ttserver/ulog
+
+CMD ["ttserver", "-port", "1978", "-pid", "/var/run/ttserver1978.pid", "-ulog", "/var/ttserver/ulog", "-ulim", "256m", "-sid", "999", "/var/ttserver/casket.tch#bnum=50000000"]
