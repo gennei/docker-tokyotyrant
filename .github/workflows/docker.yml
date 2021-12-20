@@ -25,6 +25,6 @@ jobs:
       - name: Build and Publish
         run: |
           docker buildx build \
-            --push \
             --platform linux/arm64, linux/amd64 \
-            -t gennei/tokyotyrant:latest .
+            -t gennei/tokyotyrant:latest . \
+            -- push
