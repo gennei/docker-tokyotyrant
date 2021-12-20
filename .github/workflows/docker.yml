@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build:
     name: build and publish
@@ -17,7 +18,7 @@ jobs:
           buildx-version: latest
           qemu-version: latest
 
-     - name: Login DockerHub
+      - name: Login DockerHub
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
