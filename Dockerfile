@@ -3,6 +3,7 @@ FROM centos:7
 EXPOSE 1978
 
 RUN yum update -y \
+    && yum remove -y linux-firmware \
     && yum install -y curl gcc g++ make zlib zlib-devel bzip2-devel \
     && rm -rf /var/cache/yum/* \
     && yum clean all
